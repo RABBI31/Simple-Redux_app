@@ -1,22 +1,23 @@
-import { combineReducers } from "redux";
+import { combineReducers } from 'redux';
 
-const songReducers = () => {
-    return [
-        {title : 'Mon mane na', duration :'4.52' , artist : 'Asif Akbar'},
-        {title : 'Shei Tumi', duration :'5.02' , artist : 'Ayub Bacchu'},
-        {title : 'Ashbar kale ', duration :'5.36' , artist : 'James'}
-    ];
+const songsReducer = () => {
+  return [
+    { title: 'Mon mane na', duration: '4:05' , artist : 'Asif Akbar' },
+    { title: 'Shei Tumi', duration: '2:30' , artist : 'Ayub Bacchu' },
+    { title: 'Ashbar kale ashlam aka', duration: '3:15' , artist : 'James' },
+    { title: 'Valobashbo bashbo re', duration: '1:45' , artist : 'Habib' }
+  ];
 };
 
-const selectedSongReducers = (selectedSong=null , action) => {
-    if(action.type==='SONG_SELECTED'){
-        return action.payload;
-    }
+const selectedSongReducer = (selectedSong = null, action) => {
+  if (action.type === 'SONG_SELECTED') {
+    return action.payload;
+  }
 
-    return selectedSong;
-}
+  return selectedSong;
+};
 
 export default combineReducers({
-    song : songReducers,
-    selectedSong : selectedSongReducers
+  songs: songsReducer,
+  selectedSong: selectedSongReducer
 });
